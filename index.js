@@ -115,7 +115,7 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-				wait: '⌛ Aguarde um pouco... O servidor do sapo é uma merda ⌛',
+				wait: '⌛ Aguarde um pouco... O servidor do Gs é uma merda ⌛',
 				success: '✔️ Deu certo ✔️',
 				error: {
 					stick: '❌ Falha, ocorreu um erro ao converter a imagem em figurinha ❌',
@@ -124,7 +124,7 @@ async function starts() {
 				only: {
 					group: '❌ Este comando só pode ser usado em grupos! ❌',
 					ownerG: '❌ Este comando só pode ser usado pelo proprietário do grupo! ❌',
-					ownerB: '❌ Este comando só pode ser usado pelo sapo! ❌',
+					ownerB: '❌ Este comando só pode ser usado pelo Gs! ❌',
 					admin: '❌ Burrão tu não é adm! ❌',
 					Badmin: '❌ Este comando só pode ser usado quando o bot se torna administrador! ❌'
 				}
@@ -311,7 +311,7 @@ async function starts() {
 					ranm = getRandom('.mp3')
 					rano = getRandom('.ogg')
 					dtt.length > 600
-					? reply('Muito grande, parece até o pau do Cleyton')
+					? reply('Muito grande, parece até o pau do Gs')
 					: gtts.save(ranm, dtt, function() {
 						exec(`ffmpeg -i ${ranm} -ar 48000 -vn -c:a libopus ${rano}`, (err) => {
 							fs.unlinkSync(ranm)
@@ -325,7 +325,7 @@ async function starts() {
 				case 'meme':
 					meme = await kagApi.memes()
 					buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
-					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ta ai essa merda de meme gringo, enquanto o sapo não arruma é o que tem'})
+					client.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ta ai essa merda de meme gringo, enquanto o Gs não arruma é o que tem'})
 					break
 				case 'memeindo':
 					memein = await kagApi.memeindo()
@@ -370,7 +370,7 @@ async function starts() {
 					client.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', filename: `${anu.title}.mp3`, quoted: mek})
 					break
 				case 'ytsearch':
-					if (args.length < 1) return reply('Tá caçando o que? sapo?')
+					if (args.length < 1) return reply('Tá caçando o que? PAUS?')
 					anu = await fetchJson(`https://mhankbarbars.herokuapp.com/api/ytsearch?q=${body.slice(10)}&apiKey=${apiKey}`, {method: 'get'})
 					if (anu.error) return reply(anu.error)
 					teks = '=================\n'
@@ -452,7 +452,7 @@ async function starts() {
 					mentions(teks, members_id, true)
 					break
 				case 'clearall':
-					if (!isOwner) return reply('Sapo me disse pra não fazer isso')
+					if (!isOwner) return reply(Gs me disse pra não fazer isso')
 					anu = await client.chats.all()
 					client.setMaxListeners(25)
 					for (let _ of anu) {
@@ -499,7 +499,7 @@ async function starts() {
 					if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('Tag target yang ingin di tendang!')
 					mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 					if (mentioned.length > 1) {
-						teks = 'Já recebi seu pedido bb, aguarde o servidor do sapo é uma bosta :\n'
+						teks = 'Já recebi seu pedido bb, aguarde o servidor do Gs é uma bosta :\n'
 						for (let _ of mentioned) {
 							teks += `@${_.split('@')[0]}\n`
 						}
@@ -601,7 +601,7 @@ async function starts() {
 							reply(err)
 						})
 					} else {
-						reply('Uma foto por vez mano')
+						reply('Uma foto por vez caralho')
 					}
 					break
 				default:
